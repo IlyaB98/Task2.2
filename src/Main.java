@@ -1,6 +1,9 @@
+import animals.*;
 import task1.Flower;
 import task1.Human;
+import transport.Bus;
 import transport.Car;
+import transport.Train;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -21,30 +24,30 @@ public class Main {
 
         System.out.println();
 
-        Car lada = new Car("Lada", "Grande", 1.7, "желтый", 2015,
+        Car lada = new Car("Lada", "Grande", 1.7, "желтый", 200, 2015,
                 "Россия", "механическая", "седан", "А547BE750",
                 4, "летняя");
-        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, "черный", 2020,
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 3.0, "черный", 250, 2020,
                 "Германия", "автоматическая", "седан", "А446BE750",
                 4, "летняя");
-        Car bmw = new Car("BMW", "Z8", 3.0, "черный", 2021,
+        Car bmw = new Car("BMW", "Z8", 3.0, "черный", 220, 2021,
                 "Германия", "автоматическая", "родстер", "А235BE750",
                 4, "летняя");
-        Car kia = new Car("Kia", "Sportage 4 поколение", 2.4, "красный", 2018,
+        Car kia = new Car("Kia", "Sportage 4 поколение", 2.4, "красный", 200, 2018,
                 "Южная Корея", "автоматическая", "кроссовер", "А346BE750",
                 4, "летняя");
-        Car hyundai = new Car("Hyundai", "Avante", 1.6, "оранжевый", 2016,
+        Car hyundai = new Car("Hyundai", "Avante", 1.6, "оранжевый", 210, 2016,
                 "Южная Корея", "автоматическая", "седан", "А856BE750",
                 4, "летняя");
 
-        System.out.println(lada);
-        System.out.println(audi);
-        System.out.println(bmw);
-        System.out.println(kia);
-        tireReplacement(hyundai);
-        System.out.println(hyundai);
-
-        System.out.println();
+//        System.out.println(lada);
+//        System.out.println(audi);
+//        System.out.println(bmw);
+//        System.out.println(kia);
+//        tireReplacement(hyundai);
+//        System.out.println(hyundai);
+//
+//        System.out.println();
 
         Flower rose = new Flower("Роза", null, "Голландия", 35.59, 0);
         Flower chrysanthemum = new Flower("Хризантема", 15.0, 5);
@@ -52,9 +55,9 @@ public class Main {
         Flower gypsophila = new Flower("Гипсофила", null, "Турция", 19.5, 10);
 
 //        System.out.println(rose);
-//        System.out.println(chrysanthemum);
-//        System.out.println(pion);
-//        System.out.println(gypsophila);
+////        System.out.println(chrysanthemum);
+////        System.out.println(pion);
+////        System.out.println(gypsophila);
 //
 //        Flower[] flowers = new Flower[4];
 //        flowers[0] = rose;
@@ -63,6 +66,47 @@ public class Main {
 //        flowers[3] = gypsophila;
 //        theCostOfTheBouquet(flowers);
 
+        Train lastochka = new Train("Ласточка", "B-901", 2011, "Россия",
+                null, 301, 3500, 0, "Белорусский вокзал",
+                "Минск-Пассажирский", 11);
+        Train leningrad = new Train("Ленинград", "D-125", 2019, "Россия",
+                null, 270, 1700, 0, "Ленинградский вокзал",
+                "Ленинград-Пассажирский", 8);
+
+//        System.out.println(lastochka);
+//        System.out.println(leningrad);
+
+        Bus bus1 = new Bus("Автобус-1", "A1", 2020, "Россия", "Желтый", 90);
+        Bus bus2 = new Bus("Автобус-2", "A2", 2021, "Россия", "Красный", 90);
+        Bus bus3 = new Bus("Автобус-3", "A3", 2016, "Россия", "Голубой", 80);
+
+//        System.out.println(bus1);
+//        System.out.println(bus2);
+//        System.out.println(bus3);
+
+//        lada.refill();
+//        lastochka.refill();
+//        bus1.refill();
+
+        Herbivores gazelle = new Herbivores("Газель", 5, "Африка", 40, "Трава");
+        System.out.println(gazelle);
+        Herbivores giraffe = new Herbivores("Жираф", 3, "Африка", 25, "Трава");
+        Herbivores horse = new Herbivores("Лошадь", 7, "Россия", 70, "Трава");
+
+        Predators hyena = new Predators("Гиена", 3, "Африка", 40, "Мясо");
+        Predators tiger = new Predators("Тигр", 10, "Африка", 50, "Мясо");
+        Predators bear = new Predators("Медведь", 12, "Россия", 35, "Мясо");
+
+        Amphibians frog = new Amphibians("Лягушка", 2, "Россия");
+        Amphibians snake = new Amphibians("Уж пресноводный", 1, "Россия");
+
+        Flightless peacock = new Flightless("Павлин", 3, "Россия", "Ходьба");
+        Flightless penguin = new Flightless("Пингвин", 4, "Антарктида", "Ходьба");
+        Flightless dodo = new Flightless("Птица Додо", 2, "Мадагаскар", "Ходьба");
+
+        Flying seagull = new Flying("Чайка", 2, "Россия", "Летает");
+        Flying albatross = new Flying("Альбатрос", 2, "Антарктиды", "Летает");
+        Flying falcon = new Flying("Сокол", 3, "Россия", "Летает");
 
     }
 

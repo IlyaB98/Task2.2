@@ -11,7 +11,7 @@ public class Human {
     public Human(int yearOfBirth, String name, String town, String job) {
         if (yearOfBirth < 0) {
             this.yearOfBirth = 0;
-        } else {
+        }else {
             this.yearOfBirth = yearOfBirth;
         }
 

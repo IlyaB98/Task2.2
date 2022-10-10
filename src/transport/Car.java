@@ -2,7 +2,7 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Car {
+public class Car extends Transport{
 
     private static class Key{
         private String remoteEngineStart;
@@ -41,12 +41,8 @@ public class Car {
         }
 
     }
-    private String brand;
-    private String model;
+
     private double engineVolume;
-    private String color;
-    private int productionYear;
-    private String productionCountry;
     private String transmission;
     private String bodyType;
     private String registrationNumber;
@@ -56,43 +52,14 @@ public class Car {
     private Key key;
     private Insurance insurance;
 
-    public Car(String brand, String model, double engineVolume, String color, int productionYear,
+    public Car(String brand, String model, double engineVolume, String color, int maxSpeed, int productionYear,
                String productionCountry, String transmission, String bodyType, String registrationNumber,
                int numberOfSeats, String tires) {
-        if (brand == null) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-
-        if (model == null) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
-
-        if (productionCountry == null) {
-            this.productionCountry = "default";
-        } else {
-            this.productionCountry = productionCountry;
-        }
-
+        super(brand, model, productionYear, productionCountry, color, maxSpeed);
         if (engineVolume <= 0) {
             this.engineVolume = 1.5;
         } else {
             this.engineVolume = engineVolume;
-        }
-
-        if (color == null) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-
-        if (productionYear <= 0) {
-            this.productionYear = 2000;
-        } else {
-            this.productionYear = productionYear;
         }
 
         if (transmission == null) {
@@ -151,13 +118,7 @@ public class Car {
         this.engineVolume = engineVolume;
     }
 
-    public String getColor() {
-        return color;
-    }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
 
     public String getTransmission() {
         return transmission;
@@ -183,22 +144,6 @@ public class Car {
         this.tires = tires;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
-    }
-
     public String getBodyType() {
         return bodyType;
     }
@@ -208,10 +153,16 @@ public class Car {
     }
 
     @Override
+    public void refill() {
+        System.out.println("Можно заправлять бензином, дизелем на заправке или заряжать на специальных " +
+                "электропарковках, если это электрокар.");
+    }
+
+    @Override
     public String toString() {
-        return brand + " " + model + ", сборка в " + productionCountry + " в " + productionYear + " году, " + color +
-                " цвет кузова, объем – " + engineVolume + ", коробка передач " + transmission + ", тип кузова "
-                + bodyType + ", регистрационный номер " + registrationNumber + ", количество мест " + numberOfSeats
-                + ", резина " + tires;
+        return getBrand() + " " + getModel() + ", сборка в " + getProductionCountry() + " в " + getProductionYear() +
+                " году, " + getColor() + " цвет кузова, объем – " + engineVolume + ", коробка передач " + transmission +
+                ", тип кузова " + bodyType + ", регистрационный номер " + registrationNumber + ", количество мест " +
+                numberOfSeats + ", резина " + tires;
     }
 }

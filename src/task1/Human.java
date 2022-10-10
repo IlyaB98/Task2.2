@@ -11,7 +11,7 @@ public class Human {
     public Human(int yearOfBirth, String name, String town, String job) {
         if (yearOfBirth < 0) {
             this.yearOfBirth = 0;
-        } else {
+        }else {
             this.yearOfBirth = yearOfBirth;
         }
 
@@ -35,6 +35,29 @@ public class Human {
 
     }
 
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(Integer yearOfBirth) {
+        if (yearOfBirth < 0 || yearOfBirth == null) {
+            this.yearOfBirth = 0;
+        } else {
+            this.yearOfBirth = yearOfBirth;
+        }
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        if (town != null) {
+            this.town = town;
+        } else {
+            this.town = "Информация не указана";
+        }
+    }
 
     public void greeting() {
         if (yearOfBirth == 0) {
